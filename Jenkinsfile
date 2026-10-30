@@ -4,6 +4,10 @@ pipeline {
         node {
             label 'AGENT-1'
         }
+        environment {
+            // set environment variables here
+            COURSE = "Jenkins"
+        }
     }
     stages {
         stage('Build') {
@@ -11,6 +15,8 @@ pipeline {
                 script {
                     sh """
                         echo "Building"
+                        echo $COURSE
+                        env
                     """
                 }
             }
