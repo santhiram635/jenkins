@@ -1,7 +1,7 @@
 ### jenkins setup
 
 Partition the disk
----
+```
 growpart /dev/nvme0n1 4
 
 lvextend -L +10G /dev/mapper/RootVG-varVol
@@ -11,10 +11,11 @@ lvextend -l +100%FREE /dev/mapper/RootVG-homeVol
 xfs_growfs /
 xfs_growfs /var
 xfs_growfs /home
----
+```
 
 Installation commands from Jenkins official doc
----
+```
+
 sudo curl -o /etc/yum.repos.d/jenkins.repo \
     https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
@@ -24,7 +25,7 @@ sudo yum install jenkins -y
 sudo systemctl daemon-reload
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
----
+```
 
 ### plugins
 * Stage view
