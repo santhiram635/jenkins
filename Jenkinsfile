@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    // agent any  # it will run on master
+    agent {
+        node {
+            label 'AGENT-1'
+        }
+    }
     stages {
         stage('Build') {
             steps {
