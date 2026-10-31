@@ -9,6 +9,9 @@ pipeline {
             // set environment variables here
             COURSE = "Jenkins"
     }
+    options {
+        timeout(time: 10, unit: 'SECOND') // set timeout for the pipeline
+    }
     
     stages {
         stage('Build') {
