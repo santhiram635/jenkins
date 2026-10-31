@@ -11,6 +11,7 @@ pipeline {
     }
     options {
             timeout(time: 10, unit: 'MINUTES') // set timeout for the pipeline
+            disableConcurrentBuilds()
     }
     
     stages {
@@ -20,7 +21,7 @@ pipeline {
                     sh """
                         echo "Building"
                         echo $COURSE
-                        sleep 10
+                        // sleep 10
                         env
                     """
                 }
